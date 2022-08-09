@@ -43,6 +43,9 @@
 
 
 const findOrder = (numC, prerequ, adj=Array.from({length:numC},()=>[]), idg=Array.from({length:numC},()=>0),q=[],ans=[]) =>{
+    console.log(adj);
+    console.log(idg);
+
     for(const [c,pre] of prerequ){
        adj[pre].push(c);
        idg[c]++;
