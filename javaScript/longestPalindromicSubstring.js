@@ -28,40 +28,25 @@
 
 
 
-const longestPalindrome = (s, start=0, end=0) => {//babad, 0, 0
-    const expand = (s,i,j) =>{//babad, 1, 2
-        console.log("expand While: ",i>=0 && j<s.length && s[i]==s[j]);
+const longestPalindrome = (s, start=0, end=0) => {
+    const expand = (s,i,j) =>{
         while(i>=0 && j<s.length && s[i]==s[j]){
-            i--; //-1
-            console.log("expand i: ",i);
-            j++;//1
-            console.log("expand j: ",j);
+            i--; 
+            j++;
         }
-        console.log("expand RETURN: ", j-i-1);
-        return j-i-1;//1
+        return j-i-1;
     }
-    for(let i=0; i<s.length; i++){//1
-        console.log("")
-        console.log("for: ",i)
-        const len1 = expand(s,i,i+1);// 
-        console.log("len1: ", len1)
-        const len2 = expand(s,i,i);// 1
-        console.log("len2: ", len2)
-        let len = Math.max(len1,len2); // 1
-        console.log("Math.max len: ", len)
-        console.log("if end-start<len: ",end-start<len)
-        if(end-start<len){ //true
-            console.log("if: ",i)
-            start = i-Math.floor((len-1)/2);//0
-            console.log("start: ",start)
-            end = i+Math.floor(len/2);//0
-            console.log("end: ",end)
+    for(let i=0; i<s.length; i++){
+        const len1 = expand(s,i,i+1);
+        const len2 = expand(s,i,i);
+        let len = Math.max(len1,len2);
+        if(end-start<len){ 
+            start = i-Math.floor((len-1)/2);
+            end = i+Math.floor(len/2);
         }
     }
-    console.log("start: ", start)
-    console.log("end+1: ", end+1)
-    return s.substring(start,end+1)
+    return s.substring(start,end+1);
 };
 
 console.log("RETURN: ",longestPalindrome("babad")) // bab || aba
-// console.log(longestPalindrome("cbbd")) // bb || bb
+console.log(longestPalindrome("cbbd")) // bb || bb

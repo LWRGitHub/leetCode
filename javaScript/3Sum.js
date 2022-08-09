@@ -42,14 +42,9 @@
 //  */
 
 
-const threeSum = function(nums) {
-
+const threeSum = function(nums, res=[]) {
     nums.sort((a,b) => a - b);
-
-    let res = [];
-
     for(let i = 0; i < nums.length; i++){
-        
         if(nums[i] > 0){
             break;
         } else if(i === 0 || nums[i-1] !== nums[i]){
@@ -59,14 +54,9 @@ const threeSum = function(nums) {
     return res;
 };
 
-const sum0 = (nums, i, res) => {
-    
-    let sm = i + 1;
-    let lg = nums.length - 1;
-    
+const sum0 = (nums, i, res, sm=i+1, lg=nums.length-1) => {
     while(sm < lg){
         const sum = nums[i] + nums[sm] + nums[lg];
-        
         if(sum < 0){
             sm++;
         } else if(sum > 0) {

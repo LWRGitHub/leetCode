@@ -38,22 +38,20 @@
 
 
 
-// /**
-//  * @param {number[]} nums
-//  * @param {number} target
-//  * @return {number[]}
-//  */
+// Memory
+// const twoSum = function(nums, t, m={}) {
+//     for(let i = 0; i < nums.length; i++){
+//         if(t - nums[i] in m ) return [i, m[t - nums[i]]];
+//         m[nums[i]] = i;
+//     }
+// };
 
-
-const twoSum = function(nums, target) {
-    const memo = {};
+// Speed
+const twoSum = function(nums, t, m={}) {
     for(let i = 0; i < nums.length; i++){
-        
-        const need = target - nums[i];
-        if(need in memo ){
-            return [i, memo[need]];
-        }
-        memo[nums[i]] = i;
+        const need = t - nums[i];
+        if(need in m ) return [i, m[need]];
+        m[nums[i]] = i;
     }
 };
 

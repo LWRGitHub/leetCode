@@ -52,15 +52,11 @@
 //  */
 
 
-var twoSum = function(numbers, target) {
-    const memo = {};
+var twoSum = function(numbers, target, m={}) {
     for(let i = 0; i < numbers.length; i++){
-        
         const need = target - numbers[i];
-        if(need in memo ){
-            return [memo[need] + 1, i + 1];
-        }
-        memo[numbers[i]] = i;
+        if(need in m ) return [m[need] + 1, i + 1];
+        m[numbers[i]] = i;
     }
 };
 
