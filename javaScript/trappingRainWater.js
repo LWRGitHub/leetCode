@@ -24,32 +24,17 @@ LeetCode (2023) Trapping Rain Water; https://leetcode.com/problems/trapping-rain
 */
 
 
-const trap = (height) =>{
+const trap = (height, watter=0, n=height.length, arrL=Array(n).fill(0), arrR=Array(n).fill(0)) =>{
     
-    let arrL = Array(height.length).fill(0);
-    let arrR = Array(height.length).fill(0);
+    arrL[0] = height[0];
+    arrR[n-1] = height[n-1];
     
-    for(let i = 0;i < arrL.length; i++){
-        if(i == 0) {
-            arrL[i] = height[i]
-        } else {
-            arrL[i] = Math.max(height[i],arrL[i-1])
-        }
-    }
-    for(let i = arrR.length-1; i >= 0; i--){
-        if(i == arrR.length-1) {
-            arrR[i] = height[i]
-        } else {
-            arrR[i] = Math.max(height[i],arrR[i+1])
-        }
-    }
-    let watter = 0;
-    let idx = 0;
-    for(let i = 0; i < arrL.length; i++){
-        watter += Math.min(arrL[i], arrR[i])-height[i]
-        idx++
-    }
-    return watter
+    for(let i = 1;i < n; i++) arrL[i] = Math.max(height[i],arrL[i-1]);
+    for(let i = n-2; i >= 0; i--) arrR[i] = Math.max(height[i],arrR[i+1]);
+
+    for(let i = 0; i < n; i++) watter += Math.min(arrL[i], arrR[i])-height[i];
+
+    return watter;
 };
 
 console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))// 6
