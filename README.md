@@ -11,6 +11,21 @@ Here you will find my solutions to problems found on [LeetCode.com](https://leet
 ## Tech Used
 - JavaScript
 - Python
+- Go (Golang)
+- SQL
+<!-- - Java -->
+
+
+## Setup/Run
+- Make sure node, python3, go, and sqlite3 are installed
+- `git clone https://github.com/LWRGitHub/leetCode.git`
+- `cd leetCode`
+- `cd <language>`
+    - `node <problem>.js`
+    - `python3 <problem>.py`
+    - `go run <problem>.go`
+    - `sqlite3 < <problem>.sql`
+    <!-- - `javac <problem>.java` >>> 'java <problem>' -->
 
 
 ***NOTE:***

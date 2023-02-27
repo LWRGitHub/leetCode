@@ -12,9 +12,7 @@
 
 
     Write an SQL query to find the customer_number for the customer who has placed the largest number of orders.
-
     The test cases are generated so that exactly one customer will have placed more orders than any other customer.
-
     The query result format is in the following example.
 
 
@@ -45,6 +43,7 @@
 
     Follow up: What if more than one customer has the largest number of orders, can you find all the customer_number in this case?
 
+
     LeetCode (2023) Customer Placing the Largest Number of Orders: https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/description/
 
 */
@@ -67,10 +66,8 @@ VALUES
 ;
 
 
-SELECT
-    customer_number
-FROM
-    orders
+SELECT customer_number
+FROM orders
 GROUP BY customer_number
 ORDER BY COUNT(*) DESC
 LIMIT 1; -- 3
