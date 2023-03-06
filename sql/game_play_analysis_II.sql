@@ -83,4 +83,8 @@ WHERE
         FROM
             Activity
         GROUP BY player_id
-    );
+    );  /*
+            1|2
+            2|3
+            3|1
+        */
