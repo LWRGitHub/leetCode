@@ -83,8 +83,22 @@
 
 */
 
-*/
 
+-- creating tree
+CREATE TABLE tree (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    p_id INTEGER
+);
+
+-- tree added
+INSERT INTO tree
+VALUES
+    (1, NULL),
+    (2, 1),
+    (3, 1),
+    (4, 2),
+    (5, 2)
+;
 
 
 SELECT 
@@ -94,4 +108,10 @@ SELECT
         WHEN id IN (SELECT p_id FROM Tree)THEN 'Inner'
         ELSE 'Leaf'
         END AS type
-FROM Tree;
+FROM Tree; /*
+            1|Root
+            2|Inner
+            3|Leaf
+            4|Leaf
+            5|Leaf
+           */
