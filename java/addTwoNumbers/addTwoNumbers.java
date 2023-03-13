@@ -52,7 +52,37 @@
     LeetCode (2023) Add Two Numbers: https://leetcode.com/problems/add-two-numbers/
 
 */
-package java;
+
+public class addTwoNumbers {
+    public static void main(String[] args) {
+        ListNode case1L1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+        ListNode case1L2 = new ListNode(5, new ListNode(6, new ListNode(4)));
+        ListNode result = new Solution().addTwoNumbers(case1L1, case1L2);
+        while(result!=null){
+            System.out.print(result.val + " -> ");
+            result = result.next;
+        } // 7 -> 0 -> 8
+        System.out.println();
+
+        ListNode case2L1 = new ListNode(0);
+        ListNode case2L2 = new ListNode(0);
+        result = new Solution().addTwoNumbers(case2L1, case2L2);
+        while(result!=null){
+            System.out.print(result.val + " -> ");
+            result = result.next;
+        } // 0
+        System.out.println();
+
+        ListNode case3L1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
+        ListNode case3L2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
+        result = new Solution().addTwoNumbers(case3L1, case3L2);
+        while(result!=null){
+            System.out.print(result.val + " -> ");
+            result = result.next;
+        } // 8 -> 9 -> 9 -> 9 -> 0 -> 0 -> 0 -> 1
+        System.out.println();
+    }
+}
 
 class ListNode {
     int val;
