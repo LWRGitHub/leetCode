@@ -77,6 +77,43 @@
 
 */
 
+-- create table Players
+CREATE TABLE IF NOT EXISTS Players (
+    player_id INT NOT NULL,
+    group_id INT NOT NULL,
+    PRIMARY KEY (player_id)
+);
+
+-- create table Matches
+CREATE TABLE IF NOT EXISTS Matches (
+    match_id INT NOT NULL,
+    first_player INT NOT NULL,
+    second_player INT NOT NULL,
+    first_score INT NOT NULL,
+    second_score INT NOT NULL,
+    PRIMARY KEY (match_id)
+);
+
+-- insert data into Players
+INSERT INTO Players (player_id, group_id) VALUES
+    (15, 1),
+    (25, 1),
+    (30, 1),
+    (45, 1),
+    (10, 2),
+    (35, 2),
+    (50, 2),
+    (20, 3),
+    (40, 3);
+
+-- insert data into Matches
+INSERT INTO Matches (match_id, first_player, second_player, first_score, second_score) VALUES
+    (1, 15, 45, 3, 0),
+    (2, 30, 25, 1, 2),
+    (3, 30, 15, 2, 0),
+    (4, 40, 20, 5, 2),
+    (5, 35, 50, 1, 1);
+
 
 SELECT 
     group_id,
@@ -110,5 +147,9 @@ FROM (
             Players.player_id
 ) target 
 WHERE 
-    player_rank = 1;
+    player_rank = 1; /*
+                        1|15
+                        2|35
+                        3|40
+                     */
 
