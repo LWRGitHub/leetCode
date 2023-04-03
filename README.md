@@ -26,6 +26,7 @@ Here you will find my solutions to problems found on [LeetCode.com](https://leet
     - `go run <problem>.go`
     - `sqlite3 < <problem>.sql`
     - `cd <problem>` >>> `javac <problem>.java` >>> `java <problem>`
+    - `swift <problem>.swift`
 
 
 ***NOTE:***
