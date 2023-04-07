@@ -56,17 +56,33 @@
     LeetCode (2023) Group Sold Products By The Date: https://leetcode.com/problems/group-sold-products-by-the-date/
 */
 
-select 
+-- creating activities
+CREATE TABLE Activities (
+    sell_date DATE NOT NULL,
+    product VARCHAR(255) NOT NULL
+);
+
+-- activities added
+INSERT INTO Activities (sell_date, product) VALUES 
+    ('2020-05-30', 'Headphone'),
+    ('2020-06-01', 'Pencil'),
+    ('2020-06-02', 'Mask'),
+    ('2020-05-30', 'Basketball'),
+    ('2020-06-01', 'Bible'),
+    ('2020-06-02', 'Mask'),
+    ('2020-05-30', 'T-Shirt');
+
+SELECT 
     sell_date, 
-    count( 
+    COUNT( 
         DISTINCT product 
-    ) as num_sold ,
+    ) AS num_sold ,
     GROUP_CONCAT( 
         DISTINCT product 
-        order by product 
+        ORDER BY product 
         ASC separator ',' 
-    ) as products
+    ) AS products
 FROM 
     Activities 
         GROUP BY sell_date 
-        order by sell_date ASC;
+        ORDER BY sell_date ASC;
