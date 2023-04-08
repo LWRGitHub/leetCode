@@ -49,6 +49,21 @@ class Solution {
         }
         return []
     }
+
+    // func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+
+    //     var memo = [Int: Int]()
+    //     for i in 0..<nums.count {
+
+    //     let need = target - nums[i]
+    //     if let i2 = memo[need] {
+    //         return [i2, i]
+    //     }
+
+    //     memo[nums[i]] = i
+    //     }
+    //     return []
+    // }
 }
 
 
