@@ -48,3 +48,18 @@ func twoSum(nums []int, target int) []int {
 	}
 	return []int{}
 }
+
+// func twoSum(nums []int, target int) []int {
+
+//     memo := make(map[int]int)
+//     for i :=0; i<len(nums); i++{
+
+//       need := target - nums[i]
+//       if i2, is := memo[need]; is {
+//         return []int{i2, i}
+//       }
+
+//       memo[nums[i]] = i
+//     }
+//     return []int{}
+// }
