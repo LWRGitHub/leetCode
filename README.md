@@ -13,7 +13,8 @@ Here you will find my solutions to problems found on [LeetCode.com](https://leet
 - Python
 - Go (Golang)
 - SQL
-<!-- - Java -->
+- TypeScript
+- Java
 
 
 ## Setup/Run
