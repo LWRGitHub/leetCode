@@ -17,6 +17,9 @@ Here you will find my solutions to problems found on [LeetCode.com](https://leet
 
 
 ## Setup/Run
+
+***Please take note that not all solutions are configured to run directly. However, you can easily copy and paste them into the LeetCode code editor for execution.***
+
 - Make sure node, python3, go, and sqlite3 are installed
 - `git clone https://github.com/LWRGitHub/leetCode.git`
 - `cd leetCode`
