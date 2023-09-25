@@ -61,7 +61,6 @@ const canVisitAllRooms = (rooms) =>{
     search(rooms[0]);
     
     for(let i=1; i<keys.length; i++){
-        console.log(!keys[i])
         if(!keys[i]) return false;
     }
     return true;
