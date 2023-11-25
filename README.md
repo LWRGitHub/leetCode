@@ -15,6 +15,8 @@ Here you will find my solutions to problems found on [LeetCode.com](https://leet
 - SQL
 - TypeScript
 - Java
+- Swift
+- Pandas
 
 
 ## Setup/Run
