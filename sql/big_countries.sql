@@ -53,40 +53,10 @@
     LeetCodeL (2023) Big Countries: https://leetcode.com/problems/big-countries/description/?envType=study-plan-v2&envId=top-sql-50
 */
 
-SELECT  
-    ad_id,
-    IFNULL(
-        ROUND(
-            AVG(CASE
-                WHEN action = 'Clicked' THEN 1
-                WHEN action = 'Viewed' THEN 0
-                ELSE NULL END
-            )*100,2
-        ),0
-    ) AS ctr
-FROM Ads
-GROUP BY ad_id
-ORDER BY ctr 
-    DESC, ad_id;
-
-
-/*
-SELECT 
-    ad_id, 
-    IFNULL(
-        ROUND(
-            SUM(CASE WHEN action = 'Clicked' 
-                THEN 1 
-                ELSE 0 END
-            ) / SUM(CASE WHEN action = 'Clicked' OR action = 'Viewed' 
-                THEN 1 
-                ELSE 0 END
-            ) * 100, 2
-        ), 0
-    ) AS ctr
-FROM Ads
-GROUP BY ad_id
-ORDER BY ctr 
-    DESC, 
-    ad_id ASC;
-*/
+SELECT
+    name,
+    population,
+    area
+FROM World
+WHERE 
+    area >= 3000000 OR population >= 25000000;
