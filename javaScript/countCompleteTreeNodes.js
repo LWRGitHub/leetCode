@@ -42,13 +42,13 @@ LeetCode (2023) Count Complete Tree Nodes; https://leetcode.com/problems/count-c
 var countNodes = function(root) {
     let count = 0;
 
-  const dfs = (n) => {
-      if(!n) return;
-      dfs(n.left);
-      dfs(n.right);
-      count++;
+    const dfs = (n) => {
+        if(!n) return;
+        dfs(n.left);
+        dfs(n.right);
+        count++;
     }
     dfs(root);
-    
-  return count;
+      
+    return count;
 };

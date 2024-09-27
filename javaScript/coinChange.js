@@ -46,19 +46,19 @@ var coinChange = function(coins, amount) {
     coins.sort((a,b)=>a-b)
   
     for(const coin of coins){
-      for(let i=0; i<amount+1; i++){
-        if(i >= coin){
-          const i2 = i - coin
-          let pos = arr[i2] + 1 > 0? arr[i2] + 1 : -1
-          if(pos > -1 && arr[i] > -1){
-            arr[i] = Math.min(arr[i], pos)
-          }else{
-            arr[i] = arr[i]>-1 ? arr[i] : pos
-          }
-          
+        for(let i=0; i<amount+1; i++){
+            if(i >= coin){
+                const i2 = i - coin
+                let pos = arr[i2] + 1 > 0? arr[i2] + 1 : -1
+                if(pos > -1 && arr[i] > -1){
+                    arr[i] = Math.min(arr[i], pos)
+                }else{
+                    arr[i] = arr[i]>-1 ? arr[i] : pos
+                }
+              
+            }
         }
-      }
     }
   
     return arr[amount];
-  };
+};
